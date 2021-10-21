@@ -1,0 +1,448 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+
+body, html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  
+}
+
+body {
+  background-color: white;
+  font-family: Trebuchet MS, Helvetica;
+}
+
+/* Шапка сайта */
+
+header {
+  width: 100%;
+  padding: 10px 0.5% 0px 0.5%;
+  background: transparent;
+  float: left;
+  position: fixed;
+}
+
+header #logo {
+  color: darkred;
+  cursor: pointer;
+
+}
+
+header #logo span {
+  font-size: 3.2em;
+  line-height: 45px;
+  margin-left: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+}
+
+@media (min-width: 701px) {
+  #logo {
+    float: left;
+    width: 30%;
+    font-size: 1.1em;
+  }
+
+  #about {
+    float: right;
+    width: 67%;
+  }
+}
+
+@media (max-width: 700px) {
+  #logo {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #about {
+    float: left;
+    width: 100%;
+  }
+}
+
+#about {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 50px;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#about > a {color: #fff}
+a:link{
+  text-decoration: none!important;
+}
+
+#about > a:hover {
+  color: #b0b0b0;
+  
+}
+
+#about > a:not(:last-child) {
+  margin-right: 7%;
+}
+
+/* Стили для фиксированной шапки */
+
+.fixed {
+  z-index: 5000;
+  background-color: rgba(0, 0, 0, .9);
+  
+}
+
+header.fixed #logo {
+  color: darkred;
+}
+
+.fixed #about a {color: #fff}
+.fixed #about a:hover {color: #7c7c7c}
+
+/* Главный блок на сайте */
+
+#top {
+  width: 100%;
+  background-image: url(https://i.pinimg.com/originals/7a/bf/5e/7abf5e6411aaaad6ead9e75450ee181a.jpg);
+  background-blend-mode: multiply;
+  background-color: #2e3a44;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  margin-bottom: auto;
+}
+
+@media (min-width: 1001px) {
+  #top {
+    font-size: 3em;
+    height: 1000px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+  #top {
+    font-size: 2em;
+    height: 600px;
+  }
+}
+
+@media (max-width: 650px) {
+  #top {
+    font-size: 1.5em;
+    padding-top: 50%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 450px) {
+  #top {
+    font-size: 0.9em;
+  }
+}
+
+#top h1 {
+  padding-top: 20%;
+  color: darkred;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#top h3 {
+  color: darkred;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#main{
+  
+  
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5em;
+  
+
+
+}
+@media (min-width: 1401px) {
+  #main {
+    padding: 10px 20%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 1400px) {
+  #main {
+    padding: 10px 10%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+  #main div {
+    width: 98%!important;
+    margin-bottom: 20px;
+  }
+.intro {
+  width: 100%;
+}
+}
+#main div{
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+
+  }
+  .imagine img{
+    position: relative;
+    left:200px;
+
+    
+  }
+  .modal-header h2 {
+    color: white ;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1;    
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+/* кнопка закрытия окна */
+.modal .btn-close {
+    color: darkred;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.modal .btn-close:hover {
+    color: red;
+}
+/* слой затемнения */
+.modal-wrap:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+}
+.modal-overlay {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+}
+/* активация слоя затемнения и модального блока */
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
+    display: block;
+}
+.modal-open:checked ~ .modal-wrap .modal-dialog {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+/* элементы модального окна */
+.modal-dialog {
+    color: #fff;
+    background: rgba(0, 0, 0, .9);
+    border: none;
+    border-radius: 5px;
+    position: fixed;
+    width: 80%;
+    max-width: 500px;
+    left: 50%;
+    top: -100%;
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    z-index: 103;
+    font-family: 'Times New Roman', Times, serif;
+}
+.modal-body {
+  padding: 20px;
+}
+.modal-body a{
+  text-decoration: none;
+  color: darkred;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(220,92,66,0.35))
+}
+.modal-body a:hover{
+  text-decoration: none;
+  color: red;
+  border-bottom-color: red;
+}
+.modal-body p {
+    margin: 0;
+}
+.modal-header,
+.modal-footer {
+    padding: 20px 20px;
+}
+.modal-header {
+    border-bottom: rgba(0, 0, 0, .9); 
+}
+.modal-header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+.modal-footer {
+    border-top: rgba(0, 0, 0, .9); 
+    text-align: right;
+}
+/* адаптивные картинки в модальном блоке */
+.modal-body img { 
+    max-width: 100%;
+    height: auto;
+}
+/* кнопки */
+.btn {
+    background: transparent;
+    border: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1,3em;
+    padding: 8px 15px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+}
+.btn:hover, .btn:focus {
+    background: transparent;
+}
+.btn-primary {
+    background: darkred;
+    border-color: red;
+    color: #fff;
+}
+.btn-primary:hover{
+    background: red;
+
+}
+/*Блок с members*/
+#Members{
+  float: left;
+  background-image: url(https://cdn.wallpapersafari.com/63/29/X1DVQB.jpeg);
+  background-color: black;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 100px 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  
+}
+#Members h1 {font-size:  48px;
+             font-family: Georgia, 'Times New Roman', Times, serif;}
+             #Members .photo{
+              width: 80%;
+              margin-left: 36%;
+              margin-top: 50px;
+              float: left;
+             }
+            #Members .photo {
+              background: white;
+              padding: 10px;
+              padding-bottom: 50px;
+              border: 2px solid silver;
+              width: 100%;
+              max-width: 500px;
+              font-family: 'Times New Roman', Times, serif;
+              
+            }
+            
+            #Members span {
+              float: left;
+              width: 100%;
+              font-size: 2em;
+              margin-top: 10px;
+              color: black;
+            }
+            #Members p{
+              color: black;
+            }
+            
+            @media (max-width: 700px) {
+              #Members .photo {
+                width: 80%!important;
+             }
+            }
+/*Музыка*/
+#Music {
+  padding:10%;
+  background-color: black;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  width: auto;
+  font-size: 2em;
+  display: inline-block;
+  width: 90%;
+  position: relative;
+  
+}
+
+ 
+            
+/*низ сайта*/
+.footer{
+  padding: 20px;
+  background-color: black;
+  margin-top: auto;
+}
+.content{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #fff;
+  font-size: 1.2em;
+  background-color: black;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  
+ 
+  
+}
+.page {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#Dascal{
+  font-size: 2em;
+  align:center;
+  
+}
+#main {
+  padding: 300px 20%;
+  width: 60%;
+  float:left;
+  background-color: black;
+  margin-top: auto;
+}
