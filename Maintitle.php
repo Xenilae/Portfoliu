@@ -12,13 +12,10 @@
     <div id="logo" onclick="slowScroll('#top')">
       <span>Saint Horse Gang</span>
     </div>
-    <div id="about">
-      <a href="#Dascal" onclick="slowScroll('#Dascal')" title="Who is dascal?">Who is dascal?</a>
-      <a href="#Members" onclick="slowScroll('#Members')" title="Members">Members</a>
-      <a href="#" onclick="slowScroll('#contacts')" title="Contacts" ><label class="btn" for="modal-1">Contacts</a></label>
-      <a href="#Albums" onclick="slowScroll('#Albums')" title="Music/Albums">Music/Albums</a>
-      
-    </div>
+    <?php
+        include "./components/NavBar.php";
+        echo NavBar(); 
+    ?>
   </header>
   
 <!-- Кнопка активации -->
@@ -65,31 +62,32 @@
   </div>
   <div id="Members">
     <h1>Members of SHG</h1>
-    <div class="photo">
-      <img src="https://i1.sndcdn.com/artworks-0HGMzw31cZZwE4b6-NbgLDw-t500x500.jpg" alt="Error">
-      <span>CashRow</span>
-      <p>Real Scammer</p>
-    </div>
-    <div class="photo">
-      <img src="https://i1.sndcdn.com/artworks-pvoNzPST4FLEyKje-xUYqtw-t500x500.jpg" alt="Error">
-      <span>Lolos</span>
-      <p>Real Scammer</p>
-    </div>
-    <div class="photo">
-      <img src="https://i.pinimg.com/736x/7a/00/74/7a00749f21c80c599abc939292408a88.jpg" alt="Error">
-      <span>Redba$$</span>
-      <p>Real Scammer</p>
-    </div>
-    <div class="photo">
-      <img src="https://cdns-images.dzcdn.net/images/artist/e25032f2a06aed347bd9f7f72d6db4b1/500x500.jpg" alt="Error">
-      <span>Umka</span>
-      <p>Real Scammer</p>
-    </div>
-    <div class="photo">
-      <img src="https://i1.sndcdn.com/artworks-3YxiPcFIvatwaHmG-lbo3pQ-t500x500.jpg" alt="Error">
-      <span>3GUN</span>
-      <p>Real Scammer</p>
-    </div>
+     <?php
+       $photos=array(
+        "assets/images/Artem.jpg",
+            "assets/images/ArtemOchenPopuliarnii.jpg",
+            "assets/images/Dima.jpg",
+            "assets/images/NePomniu.jpg",
+            "assets/images/Stas.jpg"
+       );
+
+       $titles=array(
+          "Artdex",
+          "3GUN",
+          "CashRow",
+          "CatAMG",
+          "UMKA"
+       );
+
+       for ($i=0; $i < count($photos); $i++) {
+        echo "
+        <div class=\"photo\">
+            <img src=\"".$photos[$i]."\" alt=\"Error\">
+            <span>".$titles[$i]."</span>
+            <p>Real Scammer</p>
+        </div>";
+       }
+     ?>
   </div>
   <div id="Music">
      <div id="Albums">
