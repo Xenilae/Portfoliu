@@ -18,9 +18,6 @@
     ?>
   </header>
   
-<!-- Кнопка активации -->
-
-<!-- Модальное окно -->
 <div class="modal">
   <input class="modal-open" id="modal-1" type="checkbox" hidden>
   <div class="modal-wrap" aria-hidden="true" role="dialog">

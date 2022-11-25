@@ -9,6 +9,30 @@
 </head>
 <body>
   <div id="main">
+        
+    <?php
+        $snitch = array("Igor", "Igor", "Igor"); 
+    
+        if(isset($_POST['button1'])) {
+            echo "Good;)";
+        }
+        if(isset($_POST['button2'])) {
+            echo "Die 0_o";
+        }
+
+        for ($i=0; $i < count($snitch); $i++) {
+          echo "
+          <span>he doesn't pray for Dascal:".$snitch[$i]."</span></br>";
+         }
+    ?>
+     
+    <form method="post">
+        <input type="submit" name="button1"
+                value="You pray for Dascal?"/>
+         
+        <input type="submit" name="button2"
+                value="You hate horses"/>
+    </form>
     <div class="intro">
       <h1 id="Dascal">Who is Dascal?</h1>
         <span>Quidam Dascaliani statu infallibilitate Scriptura: "scriptura, in pristinum, non statu aliquid contra propositum factis."Argumentum est deductionis: Scriptura est verbum Dei, et Deus non potest mentiri secundum qui research Scriptura non conveniunt cum eius defectum erroribus.

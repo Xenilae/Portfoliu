@@ -12,14 +12,42 @@
       <div class="page">
       <header>
       <div id="overlay"><img src="loading.gif" alt="Be patient..." /></div>
-        <div id="Name"><span>Saint Horse Gang</span></div>
+        <div id="Name">
+          <?php 
+          $arr=["Saint", "Horse", "Gang"];
+
+          for ($i=0; $i < count($arr); $i++) {
+            echo "
+            <span>".$arr[$i]."</span>";
+           }
+          ?>
             </div>
           </header>
        <main>
-         <div class="joke">
-         <p>No entry for cows</p>
-         <p>Intruders will be scammed</p>
-         </div>
+       <?php
+        if(isset($_POST['button1'])) {
+            echo "
+            <div class=\"joke\">
+            <p>Hello</p>
+            <p>Welocme to our site</p>
+            </div>";;
+        };
+        if(isset($_POST['button2'])) {
+            echo "
+            <div class=\"joke\">
+            <p>No entry for cows</p>
+            <p>Intruders will be scammed</p>
+            </div>";
+        }
+    ?>
+     
+    <form method="post">
+        <input type="submit" name="button1"
+                value="You pray for Dascal?"/>
+         
+        <input type="submit" name="button2"
+                value="You hate horses"/>
+    </form>
         <div class="wrapper">
             <div class="link_wrapper">
               <a href="Maintitle.php">Press to enter</a>
